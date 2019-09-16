@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="issue-container">
+            <div class="title">
+                <div class="issue_title text-center">
+                    <h1><b>Tasks</b> <span>Lists</span></h1>
+                </div>
+            </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"><input type="checkbox" id="selectAll" onclick="showButton()"></th>
+              <th scope="col">ID</th>
+              <th scope="col">Описание</th>
+              <th scope="col">Статус</th>
+              <th scope="col">Дата</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for issue in issues %}
+                <tr>
+                    <th scope="row" class="check"><input type="checkbox" class="checkBox" value="{{ issue.pk }}" onclick="showButtonDelete({{ issue.pk }})" name="{{ issue.pk }}"></th>
+                    <th scope="row"><button type='button' value="{{ issue.pk }}" onclick="showFormEdit({{ issue.pk }})" class='buttons'>{{ issue.pk }}</button></th>
+                    <td>{{ issue.description }}</td>
+                    <td>{{ issue.status }}</td>
+                    <td>{{ issue.finish_date }}</td>
+                </tr>
+            {% endfor %}
+            <button type="button" class="btn btn-light" id="deleteButton" onclick="showDelete()">Delete</button>
+          </tbody>
+        </table>
+    </div>
+<div class="modal fade" id="foo_modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>{% endblock %}

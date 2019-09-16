@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+    <div class="my-container">
+        <div class="form-container">
+            <h1 class="text-center">Create Issue</h1>
+            <form action="/issues/add/" method="post">
+                {% include 'partial/issue_form.html' %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

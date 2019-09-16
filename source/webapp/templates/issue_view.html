@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href={% static '/css/bootstrap.css' %}>
+    <link rel="stylesheet" href={% static '/css/style.css' %}>
+    <title>View</title>
+</head>
+<body>
+    <h1>Future issue:</h1>
+    <a href={% url 'index' %}>На главную</a>
+    <h2>{{ issue.description }}</h2>
+    <p>{{ issue.status }}</p>
+    <p>{{ issue.finish_date }}</p>
+    <a href="{% url 'issue_update' issue.pk %}">Edit</a>
+</body>
+</html>

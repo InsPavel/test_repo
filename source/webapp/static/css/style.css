@@ -1,0 +1,98 @@
+* {
+    font-family: 'Tahoma', sans-serif;
+}
+
+body {
+    background-image: url('../images/to_do.png');
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+
+/*-----------------------ISSUE LIST------------------------*/
+.issue-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color:rgba(0, 0, 0, 0.9);
+}
+
+.title {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.title::before,
+.title::after
+{
+    content: '';
+    border-top: 1px solid white;
+    width: 40%;
+    color: black;
+}
+
+.issue_title {
+    width: 40%;
+    margin: 0 auto;
+    word-spacing: 20px;
+    letter-spacing: 5px;
+}
+
+.issue_title span {
+    color: #c4bfa9;
+}
+
+.table {
+    margin-top: 50px;
+    color: white;
+}
+
+#deleteButton {
+    position: fixed;
+    bottom: 4%;
+    right: 10%;
+    display: none;
+}
+
+.buttons{
+    background: none;
+    color: blue;
+    border: none;
+    padding: 0;
+}
+
+.modal-content {
+    background: #121212;
+    color: white;
+}
+
+.pre {
+    white-space: pre-wrap;
+}
+
+.check {
+    width: 50px;
+}
+
+.my-container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.my-container p{
+    margin: 5px;
+}
+
+.form-container {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.form-container input, option{
+    background-color:rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.form-container p, h1{
+    color: white;
+}

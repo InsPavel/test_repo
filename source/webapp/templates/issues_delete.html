@@ -1,0 +1,37 @@
+{% block content %}
+    <div class="my-container">
+            <div class="title">
+                <div class="issue_title text-center">
+                    <h3><b>DELETE</b> <span>Tasks</span></h3>
+                </div>
+            </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Описание</th>
+              <th scope="col">Статус</th>
+              <th scope="col">Дата</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for issue in issues %}
+                <tr>
+                    <th scope="row"><a href="{% url 'issue_view' issue.pk %}">{{ issue.pk }}</a></th>
+                    <td>{{ issue.description }}</td>
+                    <td>{{ issue.status }}</td>
+                    <td>{{ issue.finish_date }}</td>
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="text-center">
+            <p class="text-white">Вы уверенны что хотите удалить данные задачи?</p>
+            <form action="{% url 'issue_delete_post' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" onclick="hideFormEdit()" name="cancel" value="no">Cancel</button>
+                <button type="submit" name="del" value="{{ issues_pk }}">Delete</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
